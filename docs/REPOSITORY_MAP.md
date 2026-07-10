@@ -18,8 +18,10 @@
 │   │   └── fig8_timeline_summary.png
 │   └── results
 ├── docs
+│   ├── DATA_AVAILABILITY.md
 │   ├── IBM_QUANTUM_EXPERIMENTS_AUDIT.md
 │   ├── JOB_IDS.md
+│   ├── PARSER_FUNCTION_MAP.md
 │   └── REPOSITORY_MAP.md
 ├── fig2_reproducibility.png
 ├── fig3_bb84_d5sd7.png
@@ -33,5 +35,5 @@
 ├── requirements.txt
 └── stats_report.pdf
 
-7 directories, 24 files
+7 directories, 26 files
 ```
