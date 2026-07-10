@@ -18,7 +18,6 @@ data/results/.gitkeep
 
 ## Figures currently present
 ```text
-data/figures/.gitkeep
 data/figures/fig2_reproducibility.png
 data/figures/fig3_bb84_d5sd7.png
 data/figures/fig4_bb84_control_group.png
