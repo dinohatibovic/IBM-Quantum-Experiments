@@ -3,6 +3,21 @@
 All notable changes to this repository are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Added
+- `latex/main.tex` — arXiv manuscript scaffold: title/authors, Methods
+  section describing the actual parser and hardware, a full Results table
+  generated from `data/quantum_results_verified.csv`, and an explicit
+  Limitations section. Abstract, Introduction, Results narrative, and
+  Discussion are marked `% TODO(author)` and contain no invented claims.
+- `latex/bibliography.bib` — two foundational references (Nielsen & Chuang
+  2010; Bennett & Brassard 1984), pending expansion.
+
+### Changed
+- `docs/ARXIV_PREP.md` updated to reflect the `latex/` scaffold's actual
+  status (in progress, not done).
+
 ## [1.1.0] - 2026-07-11
 
 ### Fixed

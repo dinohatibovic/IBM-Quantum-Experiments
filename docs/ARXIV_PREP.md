@@ -14,26 +14,43 @@ included; registered author). This is a checklist, not a claim of readiness.
 - [x] Open-source parser (`parse_ibm_json.py`) with documented function map
       (`docs/PARSER_FUNCTION_MAP.md`).
 
+## In progress
+- [~] `latex/main.tex` exists as a **factual scaffold only**: title/authors,
+      a Methods section describing the actual parser and hardware, a full
+      Results table generated directly from
+      `data/quantum_results_verified.csv`, and an explicit Limitations
+      section documenting the missing calibration/raw-data gaps below. The
+      Abstract, Introduction, Results narrative, and Discussion are marked
+      `% TODO(author)` and contain no invented claims or interpretation —
+      those sections require the author's own scientific writing.
+- [~] `latex/bibliography.bib` exists with two well-established foundational
+      references (Nielsen & Chuang 2010; Bennett & Brassard 1984). It needs
+      expansion with actual related work once the Introduction/Discussion
+      are written.
+
 ## Missing
-- [ ] No manuscript source exists yet. `latex/` is currently empty — no
-      `main.tex`, no abstract, no methods/results/discussion sections have
-      been drafted.
-- [ ] No bibliography (`bibliography.bib`) has been assembled.
 - [ ] Raw IBM JSON exports (`data/results/`), QASM circuits
       (`data/circuits/`), and backend calibration exports
-      (`data/calibration/`) are not included — a manuscript would currently
-      need to describe this as a data-availability limitation rather than
-      point to included raw data.
+      (`data/calibration/`) are not included — the manuscript currently
+      describes this as a data-availability limitation (see
+      `latex/main.tex`, Limitations section) rather than pointing to
+      included raw data. The author has these files locally and intends to
+      add them in a follow-up commit.
 - [ ] No supplementary materials document has been written.
 - [ ] No statistical appendix beyond `stats_report.pdf` exists.
+- [ ] Abstract, Introduction, Results narrative, and Discussion in
+      `latex/main.tex` are unwritten (`% TODO(author)` markers).
 
 ## Before submitting to arXiv
-1. Write the manuscript in `latex/main.tex` once the above raw-data gaps are
-   either filled or explicitly scoped out of the submission.
-2. Add `latex/bibliography.bib`.
-3. Re-run `scripts/smoke_test.sh` and update `data/checksums/release_sha256.txt`
+1. Backfill raw data (`data/results/`, `data/circuits/`, `data/calibration/`)
+   and re-run `parse_ibm_json.py --calib` to fill the `MISSING` CSV columns.
+2. Write the `% TODO(author)` sections of `latex/main.tex` — this cannot be
+   automated; it requires the author's own scientific framing and
+   interpretation.
+3. Expand `latex/bibliography.bib` with real related-work citations.
+4. Re-run `scripts/smoke_test.sh` and update `data/checksums/release_sha256.txt`
    so the arXiv submission cites an exact, verifiable repository state.
-4. Tag a Zenodo release matching the manuscript's data description.
+5. Tag a Zenodo release matching the manuscript's data description.
 
 This document should be updated as items are completed — do not mark an item
 done until the corresponding file actually exists in this repository.

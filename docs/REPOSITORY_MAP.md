@@ -56,7 +56,8 @@
 │   ├── fig7_entanglement_metrics.png
 │   └── fig8_timeline_summary.png
 ├── latex
-│   └── .gitkeep             (reserved — no manuscript draft yet)
+│   ├── bibliography.bib     (2 foundational references, pending expansion)
+│   └── main.tex             (factual scaffold; narrative sections pending, see docs/ARXIV_PREP.md)
 ├── notebooks
 │   └── .gitkeep             (reserved — no notebooks yet)
 ├── parse_ibm_json.py
@@ -73,9 +74,11 @@
 └── tests
     └── .gitkeep             (reserved — no test suite yet)
 
-18 directories, 52 files
+18 directories, 53 files
 ```
 
-Generated from `find . -path './.git' -prune -o -type f -print | sort` at v1.1.0.
-See `release/v1.1.0/MANIFEST.md` for the flat file list and
+Generated from `find . -path './.git' -prune -o -type f -print | sort`.
+Post-v1.1.0 (unreleased): adds `latex/main.tex` and
+`latex/bibliography.bib`, see `docs/ARXIV_PREP.md`. See
+`release/v1.1.0/MANIFEST.md` for the flat file list as of the v1.1.0 tag and
 `docs/DATA_AVAILABILITY.md` for what is and isn't included.
