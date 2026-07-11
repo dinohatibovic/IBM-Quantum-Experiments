@@ -1,0 +1,142 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+
+\title{% TODO(author): finalize title
+Verified Bell State, BB84 QKD, and Variational Quantum Circuit Experiments on IBM Quantum Hardware}
+
+\author{Dino Hatibovi\'{c}\\
+\href{https://orcid.org/0009-0009-5351-6901}{ORCID: 0009-0009-5351-6901}}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% TODO(author): write a real abstract. The paragraph below is a factual
+% scaffold built only from numbers already published in this repository's
+% README.md and data/quantum_results_verified.csv -- it is not a substitute
+% for an author-written abstract.
+We report verified quantum computing experiments executed on IBM Quantum
+hardware (\texttt{ibm\_fez}, 156 qubits, Heron R2; \texttt{ibm\_torino}, 133
+qubits, Heron R1), comprising Bell-state entanglement, BB84 quantum key
+distribution, quantum random number generation, and variational quantum
+circuit runs across 8 completed jobs (39{,}010 total shots). The highest
+observed Bell-state fidelity was 96.3\% (concurrence $C=0.926$), and a
+reproducibility test between repeated Bell-state jobs gave $\chi^2=2.70$,
+$p=0.44$. Raw hardware calibration data (T1/T2, gate error, readout error)
+were not available at the time of writing; this is stated explicitly as a
+limitation (Section~\ref{sec:limitations}) rather than omitted.
+\end{abstract}
+
+\section{Introduction}
+% TODO(author): motivation, related work, and contribution statement.
+% This section intentionally contains no auto-generated claims.
+
+\section{Methods}
+
+\subsection{Hardware}
+Experiments were executed on two IBM Quantum backends:
+\begin{itemize}
+  \item \texttt{ibm\_torino} --- 133 qubits, Heron R1
+  \item \texttt{ibm\_fez} --- 156 qubits, Heron R2
+\end{itemize}
+
+\subsection{Data processing}
+Raw \texttt{SamplerV2} results were decoded and analyzed with the
+open-source parser \texttt{parse\_ibm\_json.py}
+(\url{https://github.com/dinohatibovic/IBM-Quantum-Experiments}), which
+computes Bell-state fidelity, concurrence, tangle, quantum bit error rate
+(QBER), Shannon entropy, Wilson confidence intervals, and a
+$\chi^2$ reproducibility test. See \texttt{docs/PARSER\_FUNCTION\_MAP.md} in
+the repository for the full function index.
+
+% TODO(author): describe circuit constructions (Bell pair preparation,
+% BB84 basis choice/measurement protocol, VQC ansatz) once
+% data/circuits/ is populated -- see Section~\ref{sec:limitations}.
+
+\section{Results}
+
+Table~\ref{tab:results} reports all 8 completed jobs as recorded in
+\texttt{data/quantum\_results\_verified.csv}. Confidence intervals are
+Wilson score intervals at the 95\% level.
+
+\begin{table}[htbp]
+\centering
+\caption{Verified experiment results (8 jobs, 39{,}010 total shots).}
+\label{tab:results}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrr}
+\toprule
+Job ID & Backend & Registers & Shots & Fidelity ($C$) & QBER \\
+\midrule
+d5scsqneglic739vag9g & ibm\_torino & meas          & 4{,}000  & 0.859 (0.718) & N/A \\
+d5scvp3v0pgs7392jj30 & ibm\_fez    & meas          & 4{,}000  & 0.940 (0.880) & N/A \\
+d5sd2ioubqnc73c4im80 & ibm\_fez    & meas          & 4{,}000  & 0.944 (0.888) & N/A \\
+d5sd53k9u8fs73bd8du0 & ibm\_fez    & meas          & 10       & N/A           & N/A \\
+d5sd7vbv0pgs7392jr4g & ibm\_fez    & c0;eve;bob    & 12{,}000 & N/A           & 0.490 \\
+d5sd8vgubqnc73c4isu0 & ibm\_fez    & safe;eve;bob  & 12{,}000 & N/A           & 0.494 \\
+d5sd9mveglic739vatm0 & ibm\_fez    & meas          & 1{,}000  & 0.963 (0.926) & N/A \\
+d5se1sk9u8fs73bd9arg & ibm\_fez    & meas          & 2{,}000  & N/A           & N/A \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+The highest Bell-state fidelity observed was 96.3\% (job
+\texttt{d5sd9mveglic739vatm0}, concurrence $C=0.926$, tangle
+$T=0.857$). A reproducibility test between repeated Bell-state jobs
+gave $\chi^2=2.70$, $p=0.44$ (see
+\texttt{parse\_ibm\_json.py --repro} and
+\texttt{docs/PARSER\_FUNCTION\_MAP.md}).
+
+% TODO(author): write results narrative -- QRNG entropy interpretation,
+% BB84 QBER interpretation (the README's "82x QBER degradation" headline
+% claim needs its baseline/comparison spelled out here explicitly), and
+% any VQC-specific results.
+
+\section{Discussion}
+% TODO(author): interpret the results above in the context of prior work.
+
+\section{Limitations}
+\label{sec:limitations}
+\begin{itemize}
+  \item \textbf{Calibration data.} Backend calibration
+    (\texttt{backend.properties()}: T1, T2, CZ gate error, readout
+    error) was not exported for these runs and is marked
+    \texttt{MISSING} in \texttt{data/quantum\_results\_verified.csv}
+    for all 8 jobs. See \texttt{docs/DATA\_AVAILABILITY.md}.
+  \item \textbf{Raw exports.} Raw \texttt{job-*-result.json} /
+    \texttt{job-*-info.json} exports and QASM circuit definitions are
+    not yet included in the repository (\texttt{data/results/},
+    \texttt{data/circuits/}); only processed, decoded metrics are
+    currently available.
+  \item \textbf{Sample size.} The dataset comprises 8 completed jobs.
+    % TODO(author): justify this scope explicitly, or note plans to expand it.
+\end{itemize}
+
+\section*{Data Availability}
+Processed results, figures, and the statistical report are available in
+the accompanying repository and archived on Zenodo (DOI:
+\href{https://doi.org/10.5281/zenodo.20749395}{10.5281/zenodo.20749395}).
+See \texttt{docs/DATA\_AVAILABILITY.md} for the current file-by-file
+availability status.
+
+\section*{Code Availability}
+The analysis code (\texttt{parse\_ibm\_json.py}) is open source at
+\url{https://github.com/dinohatibovic/IBM-Quantum-Experiments}, licensed
+under the MIT License.
+
+% TODO(author): Acknowledgments, if any.
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+
+\end{document}

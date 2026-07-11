@@ -40,7 +40,7 @@ See `CITATION.cff` for machine-readable citation metadata.
 ├── stats_report.pdf            — statistical report generated from decoded IBM result data
 ├── analysis/                    — reserved for additional analysis scripts (currently empty; see docs/REPOSITORY_MAP.md)
 ├── notebooks/                   — reserved for exploratory notebooks (currently empty)
-├── latex/                       — reserved for the arXiv preprint source (currently empty)
+├── latex/                       — arXiv preprint source (factual scaffold; narrative sections pending, see docs/ARXIV_PREP.md)
 ├── scripts/                     — maintenance scripts (smoke test, checksum verification)
 ├── tests/                       — reserved for automated tests (currently empty)
 ├── release/                     — per-release notes and manifests
@@ -65,7 +65,7 @@ Documentation index:
 - `docs/ARXIV_PREP.md` — honest checklist of what's needed before an arXiv submission.
 - `docs/NATURE_READINESS.md` — honest gap analysis against npj Quantum Information submission guidelines.
 
-Empty reserved directories (`analysis/`, `notebooks/`, `latex/`, `tests/`, `data/results/`, `data/circuits/`, `data/calibration/`, `data/raw_bitarrays/`) are tracked with `.gitkeep` and intentionally contain no placeholder code — they are populated only when real content exists (see `docs/NATURE_READINESS.md` and `CHANGELOG.md` for the rationale).
+Empty reserved directories (`analysis/`, `notebooks/`, `tests/`, `data/results/`, `data/circuits/`, `data/calibration/`, `data/raw_bitarrays/`) are tracked with `.gitkeep` and intentionally contain no placeholder code — they are populated only when real content exists (see `docs/NATURE_READINESS.md` and `CHANGELOG.md` for the rationale). `latex/` is no longer empty (see `docs/ARXIV_PREP.md`).
 
 ## Data Availability
 
