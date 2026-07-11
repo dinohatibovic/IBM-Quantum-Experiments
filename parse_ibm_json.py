@@ -6,7 +6,7 @@ and extracts all metrics: counts, QBER, fidelity, concurrence,
 Shannon entropy, chi-squared reproducibility, and calibration values.
 
 Usage:
-    python parse_ibm_json.py --results_dir data/results/ --output data/quantum_results_verified.csv
+    python parse_ibm_json.py --results_dir data/results/ --output results.csv
     python parse_ibm_json.py --job d5sd9mveglic739vatm0 --verbose
     python parse_ibm_json.py --repro d5scvp3v0pgs7392jj30 d5sd2ioubqnc73c4im80
 """
@@ -507,7 +507,7 @@ FIELDNAMES = [
 ]
 
 
-def save_csv(rows: list[dict], output_path: str = "data/quantum_results_verified.csv"):
+def save_csv(rows: list[dict], output_path: str = "quantum_results.csv"):
     """Write list of metric dicts to CSV."""
     with open(output_path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDNAMES, extrasaction="ignore")
@@ -538,7 +538,7 @@ def main():
     )
     parser.add_argument("--results_dir", default="data/results",
                         help="Directory containing job JSON files")
-    parser.add_argument("--output", default="data/quantum_results_verified.csv",
+    parser.add_argument("--output", default="quantum_results.csv",
                         help="Output CSV file path")
     parser.add_argument("--job", default=None,
                         help="Process a single job ID (verbose output)")
