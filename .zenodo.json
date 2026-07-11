@@ -1,0 +1,29 @@
+{
+  "title": "Verified IBM Quantum Hardware Experiments",
+  "description": "Verified Bell state, BB84 QKD, and VQC experiments executed on IBM Quantum hardware (ibm_fez, ibm_torino), with parser code, processed metrics, and figures.",
+  "creators": [
+    {
+      "name": "Hatibović, Dino",
+      "orcid": "0009-0009-5351-6901"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "keywords": [
+    "quantum computing",
+    "IBM Quantum",
+    "Bell state",
+    "BB84",
+    "quantum key distribution",
+    "variational quantum classifier",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.20749395",
+      "relation": "isNewVersionOf",
+      "scheme": "doi"
+    }
+  ]
+}

@@ -22,19 +22,50 @@ Verified quantum computing experiments on real IBM hardware.
 Hatibović, D. (2026). Verified IBM Quantum Hardware Experiments.
 Zenodo. https://doi.org/10.5281/zenodo.20749395
 
+See `CITATION.cff` for machine-readable citation metadata.
+
 ## Repository Structure
 
-- `parse_ibm_json.py` — parser for IBM SamplerV2 result data.
-- `quantum_results_verified.csv` — processed table of experiment metrics.
-- `stats_report.pdf` — statistical report generated from decoded IBM result data.
-- `data/figures/` — experiment visualization figures.
-- `data/results/` — reserved location for raw IBM `job-*-info.json` and `job-*-result.json` exports.
-- `data/circuits/` — reserved location for QASM / IBM Quantum Composer circuit files.
-- `data/calibration/` — reserved location for IBM backend calibration exports or screenshots.
+```text
+.
+├── parse_ibm_json.py          — parser for IBM SamplerV2 result data
+├── data/
+│   ├── quantum_results_verified.csv  — processed table of experiment metrics
+│   ├── results/                — reserved: raw IBM job-*-info.json / job-*-result.json exports
+│   ├── circuits/                — reserved: QASM / IBM Quantum Composer circuit files
+│   ├── calibration/             — reserved: IBM backend calibration exports
+│   ├── raw_bitarrays/           — reserved: raw decoded BitArray dumps
+│   └── checksums/               — SHA-256 checksums of tracked release files
+├── figures/                    — experiment visualization figures
+├── stats_report.pdf            — statistical report generated from decoded IBM result data
+├── analysis/                    — reserved for additional analysis scripts (currently empty; see docs/REPOSITORY_MAP.md)
+├── notebooks/                   — reserved for exploratory notebooks (currently empty)
+├── latex/                       — reserved for the arXiv preprint source (currently empty)
+├── scripts/                     — maintenance scripts (smoke test, checksum verification)
+├── tests/                       — reserved for automated tests (currently empty)
+├── release/                     — per-release notes and manifests
+├── docs/                        — repository documentation (see list below)
+├── .github/                     — issue/PR templates and CI workflows
+├── CHANGELOG.md
+├── CITATION.cff
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── LICENSE
+├── requirements.txt
+└── environment.yml / Dockerfile — reproducible environment definitions
+```
+
+Documentation index:
 - `docs/JOB_IDS.md` — IBM Quantum job identifiers.
 - `docs/PARSER_FUNCTION_MAP.md` — parser function index.
 - `docs/DATA_AVAILABILITY.md` — current data availability manifest.
-- `docs/REPOSITORY_MAP.md` — repository layout.
+- `docs/REPOSITORY_MAP.md` — full repository layout.
+- `docs/CHECKSUMS.md` — how release file checksums are generated and verified.
+- `docs/RUNTIME_SAFETY.md` — parser runtime/safety notes.
+- `docs/ARXIV_PREP.md` — honest checklist of what's needed before an arXiv submission.
+- `docs/NATURE_READINESS.md` — honest gap analysis against npj Quantum Information submission guidelines.
+
+Empty reserved directories (`analysis/`, `notebooks/`, `latex/`, `tests/`, `data/results/`, `data/circuits/`, `data/calibration/`, `data/raw_bitarrays/`) are tracked with `.gitkeep` and intentionally contain no placeholder code — they are populated only when real content exists (see `docs/NATURE_READINESS.md` and `CHANGELOG.md` for the rationale).
 
 ## Data Availability
 
@@ -44,8 +75,9 @@ See `docs/DATA_AVAILABILITY.md` for the current file availability status.
 
 ## Figures
 
-Experiment figures are available in `data/figures/`:
+Experiment figures are available in `figures/`:
 
+- `fig1_bell_state_comparison.png`
 - `fig2_reproducibility.png`
 - `fig3_bb84_d5sd7.png`
 - `fig4_bb84_control_group.png`
@@ -54,3 +86,6 @@ Experiment figures are available in `data/figures/`:
 - `fig7_entanglement_metrics.png`
 - `fig8_timeline_summary.png`
 
+## Contributing
+
+See `CONTRIBUTING.md` and `CODE_OF_CONDUCT.md`.
