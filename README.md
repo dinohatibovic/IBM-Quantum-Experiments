@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/dinohatibovic/IBM-Quantum-Experiments)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/ci.yml)
 [![Docs Lint](https://github.com/dinohatibovic/IBM-Quantum-Experiments)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/docs.yml)
-[![DOI](https://zenodo.org/)](https://doi.org/10.5281/zenodo.20749395)
+[![DOI](https://zenodo.org/)](https://doi.org/10.5281/zenodo.21427293)
 
 Verified quantum computing experiments on real IBM hardware.
 
@@ -20,8 +20,9 @@ Verified quantum computing experiments on real IBM hardware.
 
 ## Citation
 
-Hatibović, D. (2026). Verified IBM Quantum Hardware Experiments.
-Zenodo. <https://doi.org/10.5281/zenodo.20749395>
+Hatibović, D. (2026). Verified IBM Quantum Hardware Experiments (Version 1.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.21427293
+
+All versions DOI: https://doi.org/10.5281/zenodo.21427292
 
 See `CITATION.cff` for machine-readable citation metadata.
 
