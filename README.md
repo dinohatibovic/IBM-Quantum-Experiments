@@ -22,9 +22,9 @@ Verified quantum computing experiments on real IBM hardware.
 
 Hatibović, D. (2026). *Verified IBM Quantum Hardware Experiments*
 (Version 1.1.0) [Computer software]. Zenodo.
-https://doi.org/10.5281/zenodo.21427293
+<https://doi.org/10.5281/zenodo.21427293>
 
-All versions DOI: https://doi.org/10.5281/zenodo.21427292
+All versions DOI: <https://doi.org/10.5281/zenodo.21427292>
 
 See `CITATION.cff` for machine-readable citation metadata.
 
