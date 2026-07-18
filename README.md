@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/dinohatibovic/IBM-Quantum-Experiments)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/ci.yml)
 [![Docs Lint](https://github.com/dinohatibovic/IBM-Quantum-Experiments)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/docs.yml)
-[![DOI](https://zenodo.org/)](https://doi.org/10.5281/zenodo.21427293)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21427293.svg)](https://doi.org/10.5281/zenodo.21427293)
 
 Verified quantum computing experiments on real IBM hardware.
 
