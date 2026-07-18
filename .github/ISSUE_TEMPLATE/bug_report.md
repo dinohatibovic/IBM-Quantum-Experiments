@@ -5,33 +5,33 @@ title: "[BUG] "
 labels: bug
 ---
 
-# Bug report
+## Bug report
 
-## Summary
+### Summary
 
 Describe the bug clearly and briefly.
 
-## Steps to reproduce
+### Steps to reproduce
 
 1. Go to the relevant command, script, or file.
 2. Run the command or workflow.
 3. Observe the error.
 
-## Expected behavior
+### Expected behavior
 
 Describe what you expected to happen.
 
-## Actual behavior
+### Actual behavior
 
 Describe what actually happened.
 
-## Environment
+### Environment
 
 - Operating system:
 - Python version:
 - Repository commit:
 - Relevant backend or data file:
 
-## Additional context
+### Additional context
 
 Add logs, screenshots, or links if helpful.

@@ -5,24 +5,24 @@ title: "[FEATURE] "
 labels: enhancement
 ---
 
-# Feature request
+## Feature request
 
-## Summary
+### Summary
 
 Describe the proposed improvement clearly and briefly.
 
-## Motivation
+### Motivation
 
 Explain why this feature would be useful.
 
-## Proposed solution
+### Proposed solution
 
 Describe the change you would like to see.
 
-## Alternatives considered
+### Alternatives considered
 
 Describe any alternatives you considered.
 
-## Additional context
+### Additional context
 
 Add examples, references, or related issues if helpful.
