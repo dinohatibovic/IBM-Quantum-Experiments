@@ -5,24 +5,33 @@ title: "[BUG] "
 labels: bug
 ---
 
-## Description
-A clear description of the problem.
+# Bug report
 
-## Affected file(s) / job ID(s)
-List the file(s) or IBM Quantum job ID(s) (see `docs/JOB_IDS.md`) involved, if applicable.
+## Summary
+
+Describe the bug clearly and briefly.
 
 ## Steps to reproduce
-1.
-2.
-3.
+
+1. Go to the relevant command, script, or file.
+2. Run the command or workflow.
+3. Observe the error.
 
 ## Expected behavior
 
+Describe what you expected to happen.
 
 ## Actual behavior
 
+Describe what actually happened.
 
 ## Environment
-- OS:
+
+- Operating system:
 - Python version:
-- `requirements.txt` versions installed:
+- Repository commit:
+- Relevant backend or data file:
+
+## Additional context
+
+Add logs, screenshots, or links if helpful.
