@@ -3,6 +3,7 @@
 ## v1.2.0 — Reproducibility data release
 
 Planned:
+
 - Add raw IBM job result JSON exports.
 - Add IBM job metadata JSON exports.
 - Add QASM or circuit source files.
@@ -14,6 +15,7 @@ Planned:
 ## v1.3.0 — Analysis and manuscript readiness
 
 Planned:
+
 - Add expanded statistical analysis notebooks.
 - Add additional validation tests.
 - Improve arXiv manuscript source.
