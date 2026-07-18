@@ -1,6 +1,6 @@
 # v1.1.0 File Manifest
 
-All tracked files at the v1.1.0 tag (generated via `find . -path './.git' -prune -o -type f -print | sort`).
+All tracked files at the v1.1.0 tag, generated from `git ls-files`.
 
 ```text
 .github/ISSUE_TEMPLATE/bug_report.md
@@ -44,7 +44,8 @@ figures/fig5_qrng_8bit.png
 figures/fig6_vqc_4qubit.png
 figures/fig7_entanglement_metrics.png
 figures/fig8_timeline_summary.png
-latex/.gitkeep
+latex/bibliography.bib
+latex/main.tex
 notebooks/.gitkeep
 parse_ibm_json.py
 release/v1.1.0/MANIFEST.md
@@ -59,5 +60,4 @@ tests/.gitkeep
 
 SHA-256 checksums for the fixed-content release files (CSV, figures, PDF,
 parser) are in `data/checksums/release_sha256.txt`. `.gitkeep` files mark
-directories intentionally reserved for future content (see
-`docs/NATURE_READINESS.md`).
+directories intentionally reserved for future content where applicable.
