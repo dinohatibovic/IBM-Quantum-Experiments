@@ -9,6 +9,7 @@ hardware jobs, exporting calibration data) that cannot be done by editing this
 repository alone.
 
 ## Data availability
+
 - Processed results (`data/quantum_results_verified.csv`) and figures are
   present and DOI-backed.
 - Raw IBM JSON exports, QASM circuits, and backend calibration snapshots are
@@ -18,6 +19,7 @@ repository alone.
   `readout_error_pct`) are currently marked `MISSING` for all 8 jobs.
 
 ## Code availability
+
 - `parse_ibm_json.py` is open-source and documented (`docs/PARSER_FUNCTION_MAP.md`,
   `docs/RUNTIME_SAFETY.md`).
 - No automated test suite exists yet (`tests/` is empty) — code availability
@@ -25,6 +27,7 @@ repository alone.
   parser's calibration-handling path is exercised with real calibration data.
 
 ## Statistical guidelines
+
 - `stats_report.pdf` and the Wilson confidence intervals / χ² reproducibility
   test in `data/quantum_results_verified.csv` cover the current 8-job dataset.
 - No dedicated statistical appendix beyond `stats_report.pdf` exists.
@@ -32,14 +35,17 @@ repository alone.
   this scope explicitly or expand the dataset.
 
 ## Supplementary information
+
 - Not yet assembled. Would need to be authored once a manuscript exists
   (see `docs/ARXIV_PREP.md`).
 
 ## Manuscript
+
 - No manuscript draft exists (`latex/` is empty).
 - No target-journal decision has been made.
 
 ## What would actually move this forward
+
 1. Export raw job JSON, QASM circuits, and calibration snapshots for the 8
    existing jobs (or re-run and capture them going forward) into
    `data/results/`, `data/circuits/`, `data/calibration/`.

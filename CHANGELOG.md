@@ -6,6 +6,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+
 - `latex/main.tex` — arXiv manuscript scaffold: title/authors, Methods
   section describing the actual parser and hardware, a full Results table
   generated from `data/quantum_results_verified.csv`, and an explicit
@@ -15,12 +16,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   2010; Bennett & Brassard 1984), pending expansion.
 
 ### Changed
+
 - `docs/ARXIV_PREP.md` updated to reflect the `latex/` scaffold's actual
   status (in progress, not done).
 
 ## [1.1.0] - 2026-07-11
 
 ### Fixed
+
 - Removed 8 duplicate figure PNGs that existed both at repo root and in `data/figures/` (byte-identical, left over from an earlier commit).
 - Added the missing `fig1_bell_state_comparison.png` reference to `README.md` and `docs/DATA_AVAILABILITY.md` (present on disk but missing from both docs since it was added).
 - Regenerated `docs/REPOSITORY_MAP.md` to match the actual repository layout.
@@ -30,10 +33,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Translated the remaining Croatian text fragment in `docs/IBM_QUANTUM_EXPERIMENTS_AUDIT.md` to English for consistency with the rest of the documentation.
 
 ### Changed
+
 - Moved `quantum_results_verified.csv` from the repo root into `data/`.
 - Consolidated all experiment figures into a single top-level `figures/` directory (previously duplicated at root and under `data/figures/`).
 
 ### Added
+
 - `.zenodo.json` — structured metadata for the next Zenodo release (mirrors `CITATION.cff`).
 - `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`.
 - `environment.yml`, `Dockerfile` — reproducible environment definitions.
@@ -46,4 +51,5 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Reserved (empty, `.gitkeep`-tracked) directories for future content: `analysis/`, `notebooks/`, `latex/`, `tests/`, `data/raw_bitarrays/`. These are intentionally left without placeholder code — see `docs/NATURE_READINESS.md` for what triggers populating each one.
 
 ## [1.0.0] - 2026-06-19
+
 - Initial Zenodo release. DOI: 10.5281/zenodo.20749395.

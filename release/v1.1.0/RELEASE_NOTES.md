@@ -24,5 +24,6 @@ See `CHANGELOG.md` for the full itemized list. Summary:
 ## Upgrade notes
 
 If you have scripts or notebooks referencing the old paths, update them:
+
 - `quantum_results_verified.csv` → `data/quantum_results_verified.csv`
 - `data/figures/*.png` → `figures/*.png`

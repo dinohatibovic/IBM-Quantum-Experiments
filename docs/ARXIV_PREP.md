@@ -5,6 +5,7 @@ refereeable scientific contribution; TeX/LaTeX or PDF manuscript; figures
 included; registered author). This is a checklist, not a claim of readiness.
 
 ## Done
+
 - [x] DOI-backed dataset on Zenodo (`CITATION.cff`, `.zenodo.json`).
 - [x] Processed results table (`data/quantum_results_verified.csv`) with
       confidence intervals (Wilson CI for fidelity/QBER).
@@ -15,6 +16,7 @@ included; registered author). This is a checklist, not a claim of readiness.
       (`docs/PARSER_FUNCTION_MAP.md`).
 
 ## In progress
+
 - [~] `latex/main.tex` exists as a **factual scaffold only**: title/authors,
       a Methods section describing the actual parser and hardware, a full
       Results table generated directly from
@@ -29,6 +31,7 @@ included; registered author). This is a checklist, not a claim of readiness.
       are written.
 
 ## Missing
+
 - [ ] Raw IBM JSON exports (`data/results/`), QASM circuits
       (`data/circuits/`), and backend calibration exports
       (`data/calibration/`) are not included — the manuscript currently
@@ -42,6 +45,7 @@ included; registered author). This is a checklist, not a claim of readiness.
       `latex/main.tex` are unwritten (`% TODO(author)` markers).
 
 ## Before submitting to arXiv
+
 1. Backfill raw data (`data/results/`, `data/circuits/`, `data/calibration/`)
    and re-run `parse_ibm_json.py --calib` to fill the `MISSING` CSV columns.
 2. Write the `% TODO(author)` sections of `latex/main.tex` — this cannot be
