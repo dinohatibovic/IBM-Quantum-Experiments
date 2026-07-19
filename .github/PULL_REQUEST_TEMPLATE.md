@@ -1,21 +1,17 @@
-# Pull request
+# Pull Request
 
-## Summary
+## Description of change
+<!-- What this PR changes and why -->
 
-Describe the purpose of this pull request.
+## Related issue
+<!-- Link to the issue, if any -->
 
-## Changes
+## Checklist
 
-- List the main changes.
-- Mention updated files or documentation.
-- Note any follow-up work.
+- [ ] Tests added/updated in `tests/` or `qoptisolve/tests/`
+- [ ] `pytest` passes locally
+- [ ] Lint (`flake8 qoptisolve/`) passes
+- [ ] Documentation updated (if relevant)
 
-## Validation
-
-- [ ] Ran `bash scripts/smoke_test.sh`
-- [ ] Ran `bash scripts/verify_checksums.sh`
-- [ ] Updated documentation if needed
-
-## Additional context
-
-Add screenshots, logs, or related issue links if helpful.
+## Output / screenshot
+<!-- If relevant -->

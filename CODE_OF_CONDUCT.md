@@ -1,50 +1,51 @@
-# Contributor Covenant Code of Conduct
+# Code of Conduct – QOptiSolve
 
-## Our Pledge
+## 🌟 Our pledge
 
-We as members, contributors, and leaders pledge to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic status,
-nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+As members, contributors, and leaders, we pledge to participate in the community free of harassment, discrimination, or hostile behavior.
 
-## Our Standards
+Our goal is for QOptiSolve to be a safe, inclusive, and professional environment for everyone.
 
-Examples of behavior that contributes to a positive environment include:
+---
 
-- Demonstrating empathy and kindness toward other people
-- Being respectful of differing opinions, viewpoints, and experiences
-- Giving and gracefully accepting constructive feedback
-- Focusing on what is best for the community
+## 🤝 Standards of behavior
 
-Examples of unacceptable behavior include:
+### Positive behavior
 
-- The use of sexualized language or imagery, and sexual attention or advances
-- Trolling, insulting or derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others' private information without explicit permission
+- Respect toward all community members
+- Constructive criticism and technical discussion
+- Actively helping new contributors
+- Focusing on solutions, not problems
 
-## Enforcement Responsibilities
+### Unacceptable behavior
 
-The repository maintainer (Dino Hatibović) is responsible for clarifying and
-enforcing standards of acceptable behavior and will take appropriate and fair
-corrective action in response to any behavior deemed inappropriate, threatening,
-offensive, or harmful.
+- Insults, discrimination, attacks
+- Publishing private information
+- Sabotaging PRs or discussions
+- Sexual or violent harassment
 
-## Scope
+---
 
-This Code of Conduct applies within all repository spaces (issues, pull
-requests, discussions) and when an individual is officially representing the
-project in public spaces.
+## 🛡 Our responsibilities
 
-## Enforcement
+Maintainers have the right and obligation to:
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the maintainer via the contact listed in `CITATION.cff`. All
-complaints will be reviewed and investigated promptly and fairly.
+- remove comments, code, or PRs that violate the rules
+- ban users who repeatedly violate them
+- protect the integrity of the project
 
-## Attribution
+---
 
-This Code of Conduct is adapted from the [Contributor Covenant](https://www.contributor-covenant.org),
-version 2.1.
+## 📩 Reporting incidents
+
+Send reports to:
+
+**<conduct@qoptisolve.ai>**
+
+All reports are treated confidentially.
+
+---
+
+## 📜 Attribution
+
+This document is based on the Contributor Covenant v2.1.

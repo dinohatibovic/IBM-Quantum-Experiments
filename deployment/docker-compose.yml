@@ -1,0 +1,10 @@
+services:
+  qoptisolve:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - IBM_QUANTUM_API_KEY=${IBM_QUANTUM_API_KEY:-}
+    restart: unless-stopped

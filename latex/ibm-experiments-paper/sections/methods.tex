@@ -1,0 +1,12 @@
+\section{Methods}
+
+All experiments were executed using Qiskit Runtime SamplerV2. Raw results were stored in BitArray archives and decoded using:
+
+\begin{enumerate}
+    \item zlib decompression,
+    \item base64 decoding,
+    \item NumPy \texttt{.npy} reconstruction,
+    \item CSV export for statistical analysis.
+\end{enumerate}
+
+No simulations were used. All results are hardware-only.

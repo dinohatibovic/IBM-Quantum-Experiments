@@ -1,0 +1,91 @@
+% DRAFT — placeholder results; see docs/research/README.md before submitting.
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, graphicx, hyperref, physics}
+
+\title{Hybrid Quantum--AI Optimization Using QAOA and VQE on IBM Quantum Systems}
+\author{Dino Hatibović \\ Quantum Computing \& AI Engineer \\ Tešanj, Bosnia and Herzegovina}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This work investigates hybrid quantum--AI optimization using the Quantum Approximate Optimization Algorithm (QAOA) and the Variational Quantum Eigensolver (VQE) on IBM Quantum hardware. We demonstrate that AI-assisted parameter initialization and noise-aware execution improve convergence, reduce circuit depth requirements, and enhance solution quality for combinatorial optimization and molecular energy estimation. Experiments were conducted on IBM Heron and Eagle processors using Qiskit Runtime.
+\end{abstract}
+
+\section{Introduction}
+Quantum computing promises computational advantages for optimization, chemistry, and machine learning. However, near-term quantum devices suffer from noise, limited qubit connectivity, and shallow circuit depth constraints. Hybrid quantum--AI approaches aim to mitigate these limitations by combining quantum algorithms with classical machine learning.
+
+This paper explores:
+\begin{itemize}
+    \item QAOA for MaxCut and routing problems
+    \item VQE for H$_2$ and LiH molecules
+    \item AI heuristics for parameter initialization
+    \item Noise-aware execution on IBM Heron/Eagle QPU
+\end{itemize}
+
+\section{Related Work}
+Prior research has explored QAOA performance on noisy hardware, VQE ansatz optimization, AI-assisted quantum optimization, and IBM Quantum hardware benchmarking. Few works combine QAOA + VQE + AI + real QPU execution in a unified framework.
+
+\section{Preliminaries}
+\subsection{Quantum Circuits}
+Gate-based quantum computing uses unitary operations and measurement to encode and solve problems.
+
+\subsection{QAOA}
+QAOA alternates between cost and mixer Hamiltonians:
+\[
+U(\gamma, \beta) = e^{-i\gamma H_C} e^{-i\beta H_M}
+\]
+
+\subsection{VQE}
+VQE minimizes:
+\[
+E(\theta) = \bra{\psi(\theta)} H \ket{\psi(\theta)}
+\]
+
+\subsection{Noise Models}
+We use depolarizing noise, readout noise, and thermal relaxation.
+
+\subsection{Error Mitigation}
+Zero Noise Extrapolation (ZNE) and M3 readout mitigation are applied.
+
+\section{Methodology}
+\subsection{Problem Formulation}
+We solve MaxCut on graphs up to 12 nodes and molecular Hamiltonians for H$_2$ and LiH.
+
+\subsection{AI Heuristics}
+Machine learning is used for parameter initialization and reinforcement learning for QAOA angle tuning.
+
+\subsection{Hardware Setup}
+IBM Heron (127 qubits) and IBM Eagle (133 qubits).
+
+\subsection{Experimental Procedure}
+Simulation baseline, QPU execution, noise-aware runs, and error mitigation.
+
+% PLACEHOLDER RESULTS — replace with real measurements before submission
+\section{Results}
+\subsection{QAOA Simulation}
+Convergence improves by 18\% with AI initialization.
+
+\subsection{QPU Execution}
+Heron backend shows 12\% better MaxCut score and 9\% lower variance.
+
+\subsection{VQE Energy Estimation}
+AI-assisted VQE reduces error by 0.004 Ha.
+
+\subsection{Benchmarking}
+Quantum outperforms classical heuristics on selected instances.
+
+\section{Discussion}
+Hybrid quantum--AI methods show promise for near-term quantum advantage. Noise remains a limiting factor, but error mitigation helps.
+
+\section{Conclusion}
+We demonstrate measurable improvements in QAOA and VQE performance using AI heuristics and IBM Quantum hardware.
+
+\section*{Acknowledgements}
+Thanks to IBM Quantum and the Qiskit team.
+
+\section*{References}
+(To be added)
+
+\end{document}

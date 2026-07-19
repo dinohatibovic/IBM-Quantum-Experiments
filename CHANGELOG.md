@@ -7,6 +7,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- QOptiSolve monorepo integration: FastAPI + QAOA MVP (`qoptisolve/`), migrated
+  `quantum_core/` (qiskit-nisq-toolkit), `materials/` (quantum-materials-screener),
+  `benchmarks/` (nisq-hardware-benchmark), plus `examples/`, `analysis/`,
+  `benchmarking/`, `notebooks/`, `deployment/`, `drafts/` and extended docs
+  (architecture, pitch deck, research drafts, LaTeX papers)
+- Python packaging (`pyproject.toml`) and combined `requirements.txt`
+- Community files: SECURITY.md, ROADMAP.md, issue forms, FUNDING.yml
+
 - `latex/main.tex` — arXiv manuscript scaffold: title/authors, Methods
   section describing the actual parser and hardware, a full Results table
   generated from `data/quantum_results_verified.csv`, and an explicit
@@ -17,6 +25,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- License changed from MIT to Apache-2.0 for the combined project
 - `docs/ARXIV_PREP.md` updated to reflect the `latex/` scaffold's actual
   status (in progress, not done).
 

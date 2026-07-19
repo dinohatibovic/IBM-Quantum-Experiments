@@ -1,0 +1,127 @@
+% statistical_appendix.tex
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,booktabs,graphicx,hyperref,siunitx}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Statistical Appendix\\Verified IBM Quantum Hardware Experiments}
+\author{Dino Hatibović}
+\date{June 19, 2026}
+
+\begin{document}
+\maketitle
+
+\section*{Purpose}
+This appendix documents the statistical methods, formulas, tests, and reporting conventions used in the Zenodo dataset (DOI: 10.5281/zenodo.20749395). It is intended to make the analysis fully reproducible and auditable.
+
+\section{Notation and Conventions}
+\begin{itemize}
+  \item $n$ — number of shots (independent measurements).
+  \item $k$ — number of observed successes (e.g., counts matching target outcome).
+  \item $\hat{p}=k/n$ — observed proportion.
+  \item Confidence intervals reported at the 95\% level unless otherwise stated.
+  \item All probabilities and proportions are reported as decimals (0--1) and percentages where convenient.
+  \item When reporting multiple tests, we indicate the test statistic, degrees of freedom (df), and $p$-value.
+\end{itemize}
+
+\section{Proportion Confidence Intervals}
+For proportions (fidelity, QBER), we use the Wilson score interval for a single proportion because it performs well for moderate $n$ and proportions near 0 or 1.
+
+Given observed successes $k$ and shots $n$, the Wilson interval at confidence level $1-\alpha$ is:
+\[
+\hat{p} = \frac{k}{n},\quad
+z = z_{1-\alpha/2}
+\]
+\[
+\tilde{p} = \frac{\hat{p} + \frac{z^2}{2n}}{1 + \frac{z^2}{n}},\qquad
+\tilde{SE} = \frac{z}{1 + \frac{z^2}{n}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}
+\]
+\[
+\text{CI}_{\text{Wilson}} = \left[\tilde{p} - \tilde{SE},\ \tilde{p} + \tilde{SE}\right]
+\]
+
+We report both the point estimate $\hat{p}$ and the Wilson CI.
+
+\section{Chi-Squared Tests for Reproducibility}
+To compare two empirical discrete distributions (e.g., two independent runs of the same circuit), we use Pearson's chi-squared test.
+
+Given observed counts for categories $i=1\ldots m$ in run A ($a_i$) and run B ($b_i$), we form expected counts by scaling one distribution to the total of the other or use pooled proportions. The test statistic is:
+\[
+\chi^2 = \sum_{i=1}^m \frac{(a_i - e_i)^2}{e_i}
+\]
+where $e_i$ are expected counts. Degrees of freedom: $df = m-1$ (or adjusted if parameters estimated). We report $\chi^2$, $df$, and $p$.
+
+For small expected counts ($e_i < 5$), we aggregate categories or use exact tests (Fisher's exact test for $2\times2$) or permutation tests.
+
+\section{Entropy and Randomness Metrics}
+Shannon entropy for a discrete distribution with probabilities $p_i$ is:
+\[
+H = -\sum_{i} p_i \log_2 p_i \quad \text{(bits)}
+\]
+We compute empirical $p_i$ from counts and report $H$ and the ratio $H/H_{\max}$ where $H_{\max}=\log_2 m$ for $m$ possible outcomes.
+
+For QRNG uniformity we also compute:
+\begin{itemize}
+  \item Empirical frequency histogram.
+  \item Chi-squared goodness-of-fit against uniform distribution.
+  \item Min-entropy estimate: $H_{\min} = -\log_2(\max_i p_i)$.
+\end{itemize}
+
+\section{Entanglement Metrics}
+For two-qubit Bell experiments we compute:
+\begin{itemize}
+  \item \textbf{Fidelity} with respect to target Bell state $\ket{\Phi^+}$:
+  \[
+  F = \bra{\Phi^+}\rho\,\ket{\Phi^+}
+  \]
+  When full tomography is not available, fidelity is estimated from measured correlators and parity counts; we document the exact estimator used in the code repository.
+  \item \textbf{Concurrence} $C$ and \textbf{Tangle} $T=C^2$ computed from reconstructed two-qubit density matrix $\rho$ using Wootters' formula.
+\end{itemize}
+
+\section{QBER and BB84 Analysis}
+QBER is computed as the fraction of mismatched bits between Alice and Bob after basis reconciliation:
+\[
+\text{QBER} = \frac{\text{\# mismatches}}{\text{\# sifted bits}}
+\]
+We report baseline QBER and QBER under eavesdropping. For significance of eavesdropper effect we compare proportions using two-proportion z-test or Fisher's exact test when counts are small.
+
+\section{Bootstrap and Resampling}
+Where appropriate (e.g., to estimate uncertainty of derived metrics like entropy or fidelity from small samples), we use nonparametric bootstrap:
+\begin{enumerate}
+  \item Resample the observed counts with replacement to create $B$ bootstrap replicates.
+  \item Recompute the statistic for each replicate.
+  \item Use the empirical distribution of bootstrap statistics to form percentile CIs (e.g., 2.5\%--97.5\%).
+\end{enumerate}
+We typically use $B=10{,}000$ for stable estimates.
+
+\section{Multiple Comparisons}
+When multiple hypothesis tests are performed (e.g., comparing many circuits or backends), we report raw $p$-values and, where appropriate, apply the Benjamini–Hochberg procedure to control the false discovery rate (FDR) at 5\%.
+
+\section{Reporting Format}
+For each reported metric we provide:
+\begin{itemize}
+  \item Point estimate (e.g., fidelity = 0.963).
+  \item 95\% CI (Wilson for proportions; percentile bootstrap for derived metrics).
+  \item Test statistic and $p$-value when hypothesis testing is performed.
+  \item Number of shots and other relevant metadata (backend id, timestamp).
+\end{itemize}
+
+\section{Example: Reproducibility Test}
+Two independent runs produced counts for four outcomes. Using Pearson's chi-squared test:
+\[
+\chi^2 = 2.70,\quad df=3,\quad p=0.44
+\]
+Interpretation: at $\alpha=0.05$ we do not reject the null hypothesis of identical distributions.
+
+\section{Appendix: Implementation Notes}
+All statistical computations are implemented in Python using \texttt{NumPy}, \texttt{SciPy}, and \texttt{statsmodels}. The code used to produce the reported numbers is included in the repository (\texttt{stats\_report.pdf} and \texttt{parse\_ibm\_json.py}), and the CSV \texttt{quantum\_results\_verified.csv} contains the raw counts and derived metrics.
+
+\section*{References}
+\begin{itemize}
+  \item Agresti, A., \& Coull, B. A. (1998). Approximate is better than 'exact' for interval estimation of binomial proportions. \emph{The American Statistician}.
+  \item Wootters, W. K. (1998). Entanglement of formation of an arbitrary state of two qubits. \emph{Physical Review Letters}.
+  \item Efron, B., \& Tibshirani, R. J. (1993). \emph{An Introduction to the Bootstrap}. Chapman \& Hall.
+\end{itemize}
+
+\end{document}

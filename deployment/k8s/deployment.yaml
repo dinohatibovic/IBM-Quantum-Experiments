@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qoptisolve
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: qoptisolve
+  template:
+    metadata:
+      labels:
+        app: qoptisolve
+    spec:
+      containers:
+        - name: qoptisolve
+          image: qoptisolve:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: IBM_QUANTUM_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: qpu-secrets
+                  key: api-key
