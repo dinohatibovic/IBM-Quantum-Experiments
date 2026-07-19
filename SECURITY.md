@@ -1,38 +1,27 @@
 # Security Policy
 
-## 🔐 Reporting security issues
+## Reporting a vulnerability
 
-If you find a security issue, please report it privately.
+This repository contains a research dataset, analysis code, and documentation.
+If you find a security issue (for example in the parser, notebooks, or analysis
+code), please report it privately using GitHub's
+[private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability)
+on this repository ("Security" tab → "Report a vulnerability").
 
-📧 Security contact: <security@qoptisolve.ai>
+Please do not open a public issue for security vulnerabilities.
 
-Do not open a public GitHub issue for security vulnerabilities.
-
----
-
-## 🛡 Supported versions
+## Supported versions
 
 | Version | Status              |
 | ------- | ------------------- |
 | main    | actively maintained |
-| dev     | active development  |
 
----
+## Scope
 
-## ⚠️ Vulnerability types in scope
+- `parse_ibm_json.py` (untrusted JSON input handling)
+- `analysis/` code
+- `notebooks/` code
+- Repository automation (`scripts/`, GitHub Actions workflows)
 
-- API injection
-- unvalidated user input
-- unauthorized access to QPU endpoints
-- data leaks
-- broken authentication
-
----
-
-## 🔏 Disclosure policy
-
-- reports are triaged within 72h
-- fixes are released within 7–14 days
-- a public report is published after the patch
-
-Thank you for helping keep QOptiSolve secure!
+Reports are triaged on a best-effort basis; fixes are published as regular
+commits and noted in `CHANGELOG.md`.

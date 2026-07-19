@@ -7,14 +7,17 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- QOptiSolve monorepo integration: FastAPI + QAOA MVP (`qoptisolve/`), migrated
-  `quantum_core/` (qiskit-nisq-toolkit), `materials/` (quantum-materials-screener),
-  `benchmarks/` (nisq-hardware-benchmark), plus `examples/`, `analysis/`,
-  `benchmarking/`, `notebooks/`, `deployment/`, `drafts/` and extended docs
-  (architecture, pitch deck, research drafts, LaTeX papers)
-- Python packaging (`pyproject.toml`) and combined `requirements.txt`
-- Community files: SECURITY.md, ROADMAP.md, issue forms, FUNDING.yml
-
+- `notebooks/` — six Jupyter notebooks: Bell state entanglement, BB84 QKD,
+  VQC, and QRNG/reproducibility (QPU reproduction of the verified
+  experiments), a QPU benchmarking pipeline over
+  `data/quantum_results_verified.csv`, and an extended noise-model analysis.
+- `analysis/noise_model_extended.py` — gate-dependent depolarizing + crosstalk
+  noise model with bootstrap parameter uncertainty and AIC/BIC comparison.
+- `latex/statistical_appendix.tex` — formal write-up of the statistical
+  methods used by the dataset (Wilson CI, chi-squared, entropy, concurrence).
+- `latex/ibm-experiments-paper/` — full sectioned paper draft for this
+  dataset (values mirror the verified CSV).
+- `SECURITY.md` — private vulnerability reporting policy.
 - `latex/main.tex` — arXiv manuscript scaffold: title/authors, Methods
   section describing the actual parser and hardware, a full Results table
   generated from `data/quantum_results_verified.csv`, and an explicit
@@ -25,7 +28,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- License changed from MIT to Apache-2.0 for the combined project
 - `docs/ARXIV_PREP.md` updated to reflect the `latex/` scaffold's actual
   status (in progress, not done).
 
