@@ -28,6 +28,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- `latex/main.tex` — all eight `TODO(author)` sections completed (abstract,
+  introduction, circuit descriptions, results narrative, discussion,
+  sample-size justification, acknowledgments) using only values from
+  `data/quantum_results_verified.csv`; the manuscript now compiles as a
+  full draft.
 - `docs/ARXIV_PREP.md` updated to reflect the `latex/` scaffold's actual
   status (in progress, not done).
 
