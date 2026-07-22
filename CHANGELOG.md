@@ -5,7 +5,33 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **`parse_ibm_json.py` — removed the P(11) fidelity override.** Bell fidelity
+  was silently redefined as P(11) whenever a job's counts were >80% |11⟩,
+  which manufactured the previously reported 96.3% headline from a
+  single-basis-state (non-Bell) distribution. Bell fidelity is now always
+  P(00)+P(11) from the measured counts (a ZZ-basis upper bound; see
+  `docs/REMEDIATION_PLAN.md` §2.2 for the planned XYZ estimator).
+- `data/quantum_results_verified.csv` — job `d5sd9mveglic739vatm0` flagged as
+  anomalous: fidelity/CI/concurrence/tangle set to N/A (its Shannon entropy of
+  0.278 implies ~96% of shots in one basis state, inconsistent with a Bell
+  state). The best verified Bell result is now 94.4% (`d5sd2ioubqnc73c4im80`).
+- `README.md` — repaired the CI and Docs Lint badge image URLs (they pointed at
+  the repository URL instead of `badge.svg` endpoints); headline Bell result
+  updated to 94.4% with an anomaly note.
+- Citations now use the Zenodo concept DOI `10.5281/zenodo.21427292` (resolves
+  to the latest version) in `README.md`, `CITATION.cff`, `latex/main.tex`,
+  `latex/statistical_appendix.tex`, `latex/ibm-experiments-paper/bibliography.bib`
+  and `notebooks/README.md`; `.zenodo.json` `isNewVersionOf` now points at the
+  v1.1.0 deposit (21427293) instead of v1.0.0.
+- `data/checksums/release_sha256.txt` regenerated for the corrected
+  `parse_ibm_json.py` and `data/quantum_results_verified.csv`.
+
 ### Added
+
+- `docs/REMEDIATION_PLAN.md` — full audit findings and step-by-step correction
+  plan for the scientific-accuracy issues found in the repository review.
 
 - `notebooks/` — six Jupyter notebooks: Bell state entanglement, BB84 QKD,
   VQC, and QRNG/reproducibility (QPU reproduction of the verified
@@ -35,6 +61,17 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   full draft.
 - `docs/ARXIV_PREP.md` updated to reflect the `latex/` scaffold's actual
   status (in progress, not done).
+
+## [1.1.1] - 2026-07-18
+
+Metadata-only patch release (no new Zenodo deposit; no experimental data,
+parser code, figures, or metrics changed).
+
+### Fixed
+
+- Synchronized version and DOI metadata across `CITATION.cff` and
+  `.zenodo.json` after the Zenodo v1.1.0 publication.
+- Updated the GitHub repository About description and homepage URL.
 
 ## [1.1.0] - 2026-07-11
 
