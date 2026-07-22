@@ -1,8 +1,8 @@
 # IBM Quantum Hardware Experiments
 
-[![CI](https://github.com/dinohatibovic/IBM-Quantum-Experiments)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/ci.yml)
-[![Docs Lint](https://github.com/dinohatibovic/IBM-Quantum-Experiments)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/docs.yml)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21427293.svg)](https://doi.org/10.5281/zenodo.21427293)
+[![CI](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/ci.yml/badge.svg)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/ci.yml)
+[![Docs Lint](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/docs.yml/badge.svg)](https://github.com/dinohatibovic/IBM-Quantum-Experiments/actions/workflows/docs.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21427292.svg)](https://doi.org/10.5281/zenodo.21427292)
 
 Verified quantum computing experiments on real IBM hardware.
 
@@ -13,18 +13,27 @@ Verified quantum computing experiments on real IBM hardware.
 
 | Experiment | Result |
 | --- | --- |
-| Bell fidelity | 96.3% (C=0.926) |
+| Bell fidelity | 94.4% (C=0.888) |
 | BB84 QBER degradation | 82× |
 | Reproducibility | χ²=2.70, p=0.44 |
 | Total shots | 39,010 |
 
+Note: job `d5sd9mveglic739vatm0` (previously reported as 96.3% Bell fidelity)
+is flagged as anomalous — its measured distribution is concentrated in a single
+basis state (Shannon entropy 0.278), which is inconsistent with a Bell state in
+the computational basis. Its fidelity/concurrence metrics are recorded as N/A
+in the dataset; the best verified Bell result is 94.4% (job
+`d5sd2ioubqnc73c4im80`, 4000 shots).
+
 ## Citation
 
 Hatibović, D. (2026). *Verified IBM Quantum Hardware Experiments*
-(Version 1.1.0) [Computer software]. Zenodo.
-<https://doi.org/10.5281/zenodo.21427293>
+(Version 1.1.1) [Computer software]. Zenodo.
+<https://doi.org/10.5281/zenodo.21427292>
 
-All versions DOI: <https://doi.org/10.5281/zenodo.21427292>
+The concept DOI above resolves to the latest archived version. v1.1.1 is a
+metadata-only patch; the latest Zenodo deposit is v1.1.0
+(<https://doi.org/10.5281/zenodo.21427293>).
 
 See `CITATION.cff` for machine-readable citation metadata.
 

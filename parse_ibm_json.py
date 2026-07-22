@@ -358,9 +358,6 @@ def process_job(job_id: str, base_dir: str = "data/results",
             # Bell state (2-bit meas register)
             if fname == "meas" and nb == 2:
                 f = bell_fidelity(c, n, target=("00", "11"))
-                # If fidelity < 50%, it's probably a |11⟩-optimised circuit
-                if c.get("11", 0) / n > 0.80:
-                    f = c.get("11", 0) / n  # target is just |11⟩
                 C = concurrence(f)
                 T = tangle(C)
                 lo, hi = wilson_ci(int(f * n), n)

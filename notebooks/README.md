@@ -1,7 +1,7 @@
 # Notebooks
 
 Jupyter notebooks accompanying the verified experiments in this repository
-(Zenodo DOI 10.5281/zenodo.20749395).
+(Zenodo DOI 10.5281/zenodo.21427292).
 
 | Notebook | Purpose | Runs where |
 | --- | --- | --- |
