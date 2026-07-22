@@ -32,6 +32,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - `docs/REMEDIATION_PLAN.md` — full audit findings and step-by-step correction
   plan for the scientific-accuracy issues found in the repository review.
+- `scripts/fetch_raw_results.py` — downloads the raw job info/result JSONs
+  (and optionally calibration snapshots) from the IBM Quantum account into
+  `data/results/`, in the RuntimeEncoder format the parser decodes.
+- `data/results/README.md` — how to populate and verify the raw-data
+  directory (automated fetch or manual dashboard download).
 
 - `notebooks/` — six Jupyter notebooks: Bell state entanglement, BB84 QKD,
   VQC, and QRNG/reproducibility (QPU reproduction of the verified
