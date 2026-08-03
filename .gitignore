@@ -12,3 +12,10 @@ env/
 # Local/editor files
 .DS_Store
 *.swp
+
+# Local backup files
+*.bak
+*.bak-*
+*.bak_*
+*.backup
+*.orig

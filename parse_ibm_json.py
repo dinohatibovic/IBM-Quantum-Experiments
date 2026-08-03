@@ -22,7 +22,96 @@ import sys
 import zlib
 
 import numpy as np
-from scipy import stats
+try:
+    from scipy import stats
+except ModuleNotFoundError:
+    stats = None
+
+def _gamma_q_no_scipy(a: float, x: float) -> float:
+    """Regularized upper incomplete gamma Q(a, x), used as a SciPy-free fallback."""
+    if x <= 0:
+        return 1.0
+    if a <= 0:
+        return 0.0
+
+    eps = 1e-14
+    tiny = 1e-300
+
+    # Series for P(a,x), then Q = 1 - P
+    if x < a + 1.0:
+        ap = a
+        total = 1.0 / a
+        delta = total
+
+        for _ in range(1, 1000):
+            ap += 1.0
+            delta *= x / ap
+            total += delta
+            if abs(delta) < abs(total) * eps:
+                break
+
+        p_val = total * math.exp(-x + a * math.log(x) - math.lgamma(a))
+        q_val = 1.0 - p_val
+        return max(0.0, min(1.0, q_val))
+
+    # Continued fraction directly for Q(a,x)
+    b = x + 1.0 - a
+    c = 1.0 / tiny
+    d = 1.0 / max(b, tiny)
+    h = d
+
+    for i in range(1, 1000):
+        an = -float(i) * (float(i) - a)
+        b += 2.0
+
+        d = an * d + b
+        if abs(d) < tiny:
+            d = tiny
+
+        c = b + an / c
+        if abs(c) < tiny:
+            c = tiny
+
+        d = 1.0 / d
+        delta = d * c
+        h *= delta
+
+        if abs(delta - 1.0) < eps:
+            break
+
+    q_val = math.exp(-x + a * math.log(x) - math.lgamma(a)) * h
+    return max(0.0, min(1.0, q_val))
+
+
+def chisquare_safe(f_obs, f_exp):
+    """
+    SciPy-compatible chi-square helper.
+    Returns a tuple: (chi2_stat, p_value).
+    """
+    if stats is not None:
+        return stats.chisquare(f_obs, f_exp=f_exp)
+
+    obs = np.asarray(f_obs, dtype=float)
+    exp = np.asarray(f_exp, dtype=float)
+
+    if obs.shape != exp.shape:
+        raise ValueError("Observed and expected arrays must have same shape")
+
+    # If expected is zero while observed is nonzero, chi-square is infinite.
+    zero_bad = (exp == 0) & (obs != 0)
+    if np.any(zero_bad):
+        return float("inf"), 0.0
+
+    mask = exp > 0
+    if not np.any(mask):
+        return 0.0, 1.0
+
+    chi2 = float(np.sum((obs[mask] - exp[mask]) ** 2 / exp[mask]))
+    df = max(int(np.count_nonzero(mask)) - 1, 1)
+    p_value = _gamma_q_no_scipy(df / 2.0, chi2 / 2.0)
+
+    return chi2, p_value
+
 
 # ─────────────────────────────────────────────────────────────────
 # STEP 1: Load JSON files
@@ -247,7 +336,7 @@ def chi2_reproducibility(counts1: dict, counts2: dict,
     """
     obs1 = [counts1.get(s, 0) for s in states]
     obs2 = [counts2.get(s, 0) for s in states]
-    return stats.chisquare(obs1, f_exp=obs2)
+    return chisquare_safe(obs1, obs2)
 
 
 def uniformity_test(counts: dict, num_states: int,
@@ -261,7 +350,7 @@ def uniformity_test(counts: dict, num_states: int,
                   for i in range(num_states)]
     observed   = [counts.get(s, 0) for s in all_states]
     expected   = [total / num_states] * num_states
-    return stats.chisquare(observed, f_exp=expected)
+    return chisquare_safe(observed, expected)
 
 
 # ─────────────────────────────────────────────────────────────────
