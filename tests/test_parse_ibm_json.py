@@ -39,3 +39,25 @@ def test_uniformity_test_uses_safe_chisquare():
     )
     assert chi2 == 0.0
     assert p_value == 1.0
+
+
+def test_bell_fidelity_counts_expected_bell_targets():
+    import math
+    from parse_ibm_json import bell_fidelity
+
+    counts = {"00": 470, "01": 20, "10": 30, "11": 480}
+
+    assert math.isclose(bell_fidelity(counts, 1000), 0.95, rel_tol=1e-12)
+
+
+def test_bell_fidelity_supports_explicit_single_target():
+    import math
+    from parse_ibm_json import bell_fidelity
+
+    counts = {"00": 10, "01": 10, "10": 17, "11": 963}
+
+    assert math.isclose(
+        bell_fidelity(counts, 1000, target=("11",)),
+        0.963,
+        rel_tol=1e-12,
+    )
