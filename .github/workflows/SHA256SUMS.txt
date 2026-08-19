@@ -1,2 +1,0 @@
-# generated via:
-# sha256sum FILES >> SHA256SUMS.txt
