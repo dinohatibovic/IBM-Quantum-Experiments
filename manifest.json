@@ -1,0 +1,21 @@
+{
+  "repository": "IBM-Quantum-Experiments",
+  "branch": "feat/reproducibility-package",
+  "status": "reproducibility-package",
+  "doi": "10.5281/zenodo.21427292",
+  "reference_environment": {
+    "python": "3.14.4",
+    "qiskit": "2.5.1",
+    "qiskit-experiments": "0.14.1",
+    "qiskit-ibm-runtime": "0.48.0",
+    "qiskit-qasm3-import": "0.6.0"
+  },
+  "artifacts": [
+    "requirements-lock.txt",
+    "requirements-freeze.txt",
+    "data/quantum_results_verified.csv",
+    "figures",
+    "stats_report.pdf",
+    "tests"
+  ]
+}
