@@ -1,0 +1,15 @@
+name: Benchmark Records
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  benchmark-records:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: |
+          test -d data/benchmark_records

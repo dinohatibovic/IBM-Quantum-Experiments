@@ -1,0 +1,11 @@
+{
+  "project": "IBM-Quantum-Experiments",
+  "role": "scientific-evidence-repository",
+  "exports": [
+    "QAB Benchmark Record V2"
+  ],
+  "runtime_jobs": [
+    "da24ra2ein7c73be5250",
+    "da24rbug52gs73cmccng"
+  ]
+}
