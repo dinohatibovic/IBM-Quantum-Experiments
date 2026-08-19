@@ -20,3 +20,14 @@ Planned:
 - Add additional validation tests.
 - Improve arXiv manuscript source.
 - Add example reproduction workflow.
+
+## Reproducibility Package
+
+1. Runtime workload archive
+2. Calibration snapshots
+3. Notebook reproduction workflows
+4. Benchmark Record V2 exports
+
+## QAB Integration
+
+IBM-Quantum-Experiments becomes a dataset and evidence repository feeding QAB.

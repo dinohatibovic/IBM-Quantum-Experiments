@@ -10,3 +10,11 @@ d5sd8vgubqnc73c4isu0
 d5sd9mveglic739vatm0
 d5se1sk9u8fs73bd9arg
 ```
+
+## Verified Runtime Workloads
+
+Sampler:
+da24ra2ein7c73be5250
+
+Estimator:
+da24rbug52gs73cmccng
