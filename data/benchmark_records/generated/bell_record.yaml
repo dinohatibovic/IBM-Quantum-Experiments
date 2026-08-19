@@ -1,0 +1,23 @@
+ALGORITHM:
+  name: BellState
+  num_qubits: 2
+  depth:
+  gate_count:
+  two_qubit_gate_count:
+
+EXECUTION:
+  backend:
+  job_id:
+  shots:
+  runtime_seconds:
+
+QUALITY:
+  fidelity:
+  concurrence:
+  success_probability:
+  entropy:
+
+REFERENCE:
+  reference_value:
+  error:
+  relative_error:
