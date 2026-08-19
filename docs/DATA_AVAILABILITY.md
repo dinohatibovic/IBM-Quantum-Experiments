@@ -64,12 +64,3 @@ data/checksums/release_sha256.txt
 ```
 
 SHA-256 checksums of the tracked release files above, generated at release time. See `docs/CHECKSUMS.md`.
-
-## Planned Runtime Archive
-
-The repository is being extended with:
-
-- Runtime job metadata
-- Runtime result exports
-- Calibration snapshots
-- QAB Benchmark Record exports
